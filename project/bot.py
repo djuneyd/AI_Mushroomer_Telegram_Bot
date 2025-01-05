@@ -1,5 +1,5 @@
 from telebot import TeleBot, types
-from config import *
+from private import *
 from AI_recognizer.AI_mushroom_recognizer import *
 from Third_face_AIs.simple_gpt_yandex import *
 import os, cv2
