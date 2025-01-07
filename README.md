@@ -6,7 +6,7 @@ This project is a Telegram bot that helps recognize mushrooms from a photo and p
 
 1. Clone the repository:
     ```sh
-    git clone <https://github.com/djuneyd/AI_Mushroomer_Telegram_Bot.git>
+    git clone https://github.com/djuneyd/AI_Mushroomer_Telegram_Bot.git
     ```
 
 2. Install the required dependencies:
