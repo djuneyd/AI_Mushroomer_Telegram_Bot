@@ -2,6 +2,7 @@ from telebot import TeleBot, types
 from private import *
 from AI_recognizer.AI_mushroom_recognizer import *
 from Third_face_AIs.simple_gpt_yandex import *
+from user_manager import *
 import os, cv2
 
 bot = TeleBot(TOKEN)
@@ -45,11 +46,23 @@ If you need more information about it, click the button below.😁''', reply_mar
 
 @bot.message_handler(commands=['start'])
 def start_command(message):
+    # check if the user is in database
+    users = user_manager.get_users_telegram_id()
+    users_id = message.from_user.id
+    for i in users:
+        if i[0] == users_id:
+            break
+    else:
+        # add him if no
+        user_manager.add_user(users_id, message.from_user.username)
+
     bot.set_chat_menu_button(message.chat.id, types.MenuButtonCommands('commands'))
     # greeting
     bot.send_message(message.chat.id, '''Hello, I'm Mushroomer!👋
 I can help you identify and understand various types of mushrooms.🍄
-I specialize in 20 types of mushrooms from around the world.🤓''')
+I specialize in 20 types of mushrooms from around the world.🤓
+                     
+PLEASE NOTE THAT THIS IS A DEMO VERSION OF THE BOT AND DON'T RELY ON ITS DECISIONS.🚨''')
     
 @bot.message_handler(commands=['recognize'])
 def recognize_the_mushroom(message):
@@ -75,4 +88,5 @@ def callback_inline(call):
 {more_info}''')
     
 if __name__ == '__main__':
+    user_manager = User_manager(DATABASE)
     bot.infinity_polling()
