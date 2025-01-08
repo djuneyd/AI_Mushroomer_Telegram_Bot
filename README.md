@@ -9,12 +9,14 @@ This project is a Telegram bot that helps recognize mushrooms from a photo and p
     git clone https://github.com/djuneyd/AI_Mushroomer_Telegram_Bot.git
     ```
 
-2. Install the required dependencies:
+2. Install Python 3.11 if you haven't already. You can download it from [python.org](https://www.python.org/downloads/release/python-3110/).
+
+3. Install the required dependencies:
     ```sh
     pip install -r requirements.txt
     ```
 
-3. Create a [private.py](http://_vscodecontentref_/10) file and add your tokens and API keys:
+4. Create a [private.py](http://_vscodecontentref_/10) file and add your tokens and API keys:
     ```py
     TOKEN = 'your_telegram_bot_token'
     DATABASE = 'project/data_bases/user_manager.db'
