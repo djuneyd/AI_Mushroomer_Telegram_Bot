@@ -62,6 +62,10 @@ def start_command(message):
 I can help you identify and understand various types of mushrooms.🍄
 I specialize in 20 types of mushrooms from around the world.🤓
                      
+Commands:
+/start - Start the Bot.😁
+/recognize - Recognize the mushroom.🍄
+                     
 PLEASE NOTE THAT THIS IS A DEMO VERSION OF THE BOT AND DON'T RELY ON ITS DECISIONS.🚨''')
     
 @bot.message_handler(commands=['recognize'])
